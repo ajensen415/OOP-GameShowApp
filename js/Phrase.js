@@ -4,7 +4,7 @@
 
 class Phrase {
     constructor(phraseText) {
-        console.log(phraseText);
+        //console.log(phraseText);
         this.phrase = phraseText.toLowerCase();
     }
     addPhraseToDisplay() {
@@ -16,20 +16,22 @@ class Phrase {
             if (this.phrase[i] == " ") {
                 li.className += "space";
             } else {
-                //li.className += `hide letter ${this.phrase[i]}`;
-                li.className += `letter ${this.phrase[i]}`;
+                li.className += `hide letter ${this.phrase[i]}`;
             }
         }
 
     }
-    checkLetter() {
-        const letter = document.getElementsByClassName("key");
-        if (letter == this.phrase[i]) {
-
+    checkLetter(letter) {
+        if (this.phrase.includes(letter)) {
+            return true;
+        } else {
+            return false;
         }
     }
-    showMatchedLetter() {
-
+    showMatchedLetter(letter) {
+        const clickedLetters = document.getElementsByClassName(letter);
+        for (let i = 0; i < clickedLetters.length; i++) {
+            clickedLetters[i].classList.replace('hide', 'show');
+        }    
     }
 }
-
