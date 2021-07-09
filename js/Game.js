@@ -13,7 +13,7 @@ class Game {
             new Phrase("see the good"), 
             new Phrase("if not now when")
             ];
-        this.activePhrase = 'null';
+        this.activePhrase = null;
     }
 
     //Start game method - remove start game overylay & selects/displays a random phrase (blank boxes).
