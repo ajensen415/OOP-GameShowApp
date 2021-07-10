@@ -96,7 +96,8 @@ class Game {
         }
 
         let hearts = document.querySelectorAll('img');
-        this.missed = 0;
-        hearts[this.missed].src ="images/liveHeart.png"
+        for (let i = 0; i < hearts.length; i++) {
+            hearts[i].src = "images/liveHeart.png"
+        }
     }
 }
